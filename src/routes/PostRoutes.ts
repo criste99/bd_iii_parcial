@@ -13,8 +13,11 @@ class PostRouter {
     }
 
     public async createPost(req: Request, res:Response):Promise<void>{
-        const {title} = req.body;
-        const newPost = new Post({title});
+        const {curso} = req.body;
+        const {lugar} = req.body;
+        const {sede} = req.body;
+
+        const newPost = new Post({curso,lugar,sede});
         await newPost.save();
         res.json({status:res.status});
     }

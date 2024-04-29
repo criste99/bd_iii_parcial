@@ -21,8 +21,10 @@ class PostRouter {
     }
     createPost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { title } = req.body;
-            const newPost = new Post_1.default({ title });
+            const { curso } = req.body;
+            const { lugar } = req.body;
+            const { sede } = req.body;
+            const newPost = new Post_1.default({ curso, lugar, sede });
             yield newPost.save();
             res.json({ status: res.status });
         });
